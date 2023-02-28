@@ -3,24 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin/admin/admin.component';
-import { LoginRegisterComponent } from './login-register/login-register.component';
-import { LoginFormComponent } from './login-register/login-form/login-form.component';
-import { RegisterFormComponent } from './login-register/register-form/register-form.component';
+import { LoginFormComponent } from './admin/auth/login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './blog/home/home.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
-    LoginRegisterComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    HomeComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

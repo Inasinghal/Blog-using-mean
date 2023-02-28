@@ -58,7 +58,7 @@ exports.login = async function (req, res) {
     const existinguser = await User.findOne({ email: user.email });
     if(existinguser && (await bcrypt.compare(user.password, existinguser.password))) {
         existinguser.generateJwt();
-        res.status(200).json(existinguser);
+        res.status(200).json({token: existinguser.token});
     } else {
         res.status(409).send("Invalid Credentials!");
         return;
