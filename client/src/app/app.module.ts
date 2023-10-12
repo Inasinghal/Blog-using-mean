@@ -3,24 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './admin/auth/login-form/login-form.component';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './blog/home/home.component';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { AdminModule } from './admin/admin.module';
+import { BlogModule } from './blog/blog.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent,
-    HomeComponent,
-    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule,
+    BlogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

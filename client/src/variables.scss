@@ -1,0 +1,24 @@
+/******* Bootstrap Theming ********/
+
+$blue: #2A4B7C;
+$primary: #2A4B7C;
+$secondary: #202C45;
+$light: #f1f3ff;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "light": $light,
+);
+
+$font-family-base: 'Open Sans', sans-serif;
+
+$body-bg: $light;
+
+$body-color: #666666;
+
+$headings-color: $secondary;
+
+$enable-rounded: false;
+
+$enable-shadows: false;

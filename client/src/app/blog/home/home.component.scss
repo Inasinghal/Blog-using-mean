@@ -1,0 +1,150 @@
+@import "../../../variables.scss";
+
+/********** Layout Style **********/
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        float: left;
+        padding: 30px;
+        background: #ffffff;
+    }
+
+    .sidebar-icon {
+        margin-right: -18px;
+        visibility: hidden;
+        height: 0 !important;
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        padding: 15px;
+        float: left;
+        background: $light;
+    }
+
+    .sidebar,
+    .content {
+        -webkit-transition: margin 200ms ease-out;
+        -moz-transition: margin 200ms ease-out;
+        -o-transition: margin 200ms ease-out;
+        transition: margin 200ms ease-out;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .wrapper {
+        .content {
+            padding: 30px 0px 30px 30px;
+            position: relative;
+            width: calc(100% - 50px);
+            margin-left: 50px;
+            float: right;
+
+            &::before,
+            &::after {
+                position: fixed;
+                content: "";
+                width: 100%;
+                height: 30px;
+                background: $light;
+                z-index: 9;
+            }
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 350px;
+            height: 100%;
+            margin-left: -300px;
+            float: left;
+            overflow: auto;
+            scrollbar-width: thin;
+            scrollbar-color: gray;
+            z-index: 9;
+
+            &:hover {
+                margin-left: 0px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: darkgrey;
+                outline: 1px solid slategrey;
+                border-radius: 7px
+            }
+        }
+
+        .sidebar-text {
+            display: none;
+        }
+
+        .sidebar-icon {
+            display: flex;
+        }
+
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .wrapper .sidebar {
+        z-index: 99;
+    }
+
+    .wrapper .sidebar-text,
+    .wrapper .sidebar:hover .sidebar-icon {
+        visibility: hidden;
+        height: 0 !important;
+    }
+
+    .wrapper .sidebar-icon,
+    .wrapper .sidebar:hover .sidebar-text {
+        visibility: visible;
+        height: 100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper .sidebar {
+        margin: 0;
+    }
+
+    .wrapper .content {
+        width: calc(100% - 350px);
+        margin-left: 350px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .wrapper .content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper .content {
+        padding: 15px;
+    }
+}
